@@ -3,207 +3,154 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Akshada Doke | Portfolio</title>
+    <title>TasteBite | Restaurant</title>
 
     <style>
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
 
-        body {
-            background: #0a0f24;
-            color: #fff;
-        }
+        body { background: #0a0f24; color: white; }
 
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 60px;
-            background: rgba(0,0,0,0.5);
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(8px);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 60px; background: rgba(0,0,0,0.5);
+            position: sticky; top: 0; backdrop-filter: blur(8px);
         }
 
-        .logo {
-            font-size: 26px;
-            font-weight: bold;
-        }
+        .logo { font-size: 26px; font-weight: bold; }
         .logo span { color: #00eaff; }
 
         nav a {
-            margin-left: 18px;
-            color: #eee;
-            text-decoration: none;
-            transition: .3s;
+            margin-left: 18px; color: #ddd;
+            text-decoration: none; transition: .3s;
         }
         nav a:hover { color: #00eaff; }
 
         .hero {
-            text-align: center;
-            padding: 120px 20px;
+            text-align: center; padding: 140px 20px;
+            background: url('https://img.freepik.com/free-photo/delicious-pasta-plate_23-2150712361.jpg')
+            center/cover no-repeat; height: 500px;
+            position: relative;
         }
-
-        .hero h1 {
-            font-size: 46px;
+        .hero::after {
+            content:"";position:absolute;top:0;left:0;width:100%;height:100%;
+            background:rgba(0,0,0,0.6);
         }
+        .hero-content { position: relative; z-index: 2; }
 
-        .hero span { color: #00eaff; }
-
-        .hero p {
-            margin: 10px auto;
-            max-width: 500px;
-            font-size: 18px;
-        }
+        .hero h1 { font-size: 48px; color: #00eaff; }
+        .hero p { font-size: 20px; margin: 10px auto; }
 
         .btn {
-            display: inline-block;
-            margin-top: 20px;
-            background: #00eaff;
-            color: #000;
-            padding: 12px 22px;
-            border-radius: 6px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.3s;
+            display: inline-block; margin-top: 20px; background: #00eaff;
+            color: #000; padding: 12px 22px; border-radius: 6px;
+            font-weight: 600; text-decoration: none; transition: .3s;
         }
         .btn:hover { opacity: 0.8; cursor: pointer; }
 
         section { padding: 60px; }
 
-        h2 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 30px;
-        }
+        h2 { text-align: center; font-size: 32px; margin-bottom: 30px; }
 
-        /* Skills */
-        .skills-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill {
-            border: 1px solid #00eaff;
-            padding: 12px 22px;
-            border-radius: 25px;
-            transition: .3s;
-        }
-
-        .skill:hover {
-            background: #00eaff;
-            color: #000;
-            cursor: pointer;
-        }
-
-        /* Projects */
-        .projects-container {
-            display: grid;
-            gap: 20px;
+        /* Menu Section */
+        .menu-container {
+            display: grid; gap: 20px;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         }
 
-        .project-card {
-            background: #11172e;
-            padding: 20px;
-            border-radius: 10px;
-            transition: .3s;
+        .menu-item {
+            background: #11172e; padding: 20px; border-radius: 10px;
+            transition: .3s; text-align: center;
         }
-        .project-card:hover {
-            transform: translateY(-8px);
+        .menu-item:hover { transform: translateY(-8px); }
+
+        .menu-item img {
+            width: 100%; height: 180px; border-radius: 8px; object-fit: cover;
         }
 
-        .card-btn {
-            display: inline-block;
-            background: #00eaff;
-            padding: 10px 15px;
-            margin-top: 10px;
-            border-radius: 5px;
-            color: #000;
-            font-weight: 600;
-            text-decoration: none;
-        }
+        .price { margin-top: 10px; font-size: 20px; color: #00eaff; }
 
+        /* Contact */
         footer {
-            text-align: center;
-            padding: 15px;
-            background: #000;
-            margin-top: 30px;
+            text-align: center; padding: 18px; background: #000; margin-top: 30px;
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">Akshada<span>.Tech</span></div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<header>
+    <div class="logo">Taste<span>Bite</span></div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <section id="home" class="hero">
-        <h1>Hello, I'm <span>Akshada Doke</span></h1>
-        <p>Aspiring <strong>Software Engineer</strong> | DevOps & Backend Enthusiast</p>
-        <a href="#projects" class="btn">View Projects</a>
-    </section>
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Welcome to TasteBite</h1>
+        <p>Where flavor meets perfection 🍽️</p>
+        <a href="#menu" class="btn">Explore Menu</a>
+    </div>
+</section>
 
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-container">
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">PHP</div>
-            <div class="skill">Linux</div>
-            <div class="skill">Jenkinss CI/CD</div>
-            <div class="skill">Git & GitHub</div>
+<section id="menu">
+    <h2>Our Best Menu Items</h2>
+
+    <div class="menu-container">
+
+        <div class="menu-item">
+            <img src="https://img.freepik.com/free-photo/tasty-pepperoni-pizza_23-2148352034.jpg" alt="">
+            <h3>Cheese Burst Pizza</h3>
+            <p>Loaded with cheese, herbs & love.</p>
+            <div class="price">₹349</div>
         </div>
-    </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="projects-container">
-            <div class="project-card">
-                <h3>CI/CD Pipeline Automation</h3>
-                <p>Automated deployment using Jenkins, GitHub Webhooks & NGINX server.</p>
-                <a class="card-btn" href="#">GitHub Repo</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Library Management System</h3>
-                <p>Developed using PHP, MySQL, Bootstrap supporting CRUD operations.</p>
-                <a class="card-btn" href="#">Explore</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Secure File Access System</h3>
-                <p>Linux-based security system with user authentication.</p>
-                <a class="card-btn" href="#">Repository</a>
-            </div>
+        <div class="menu-item">
+            <img src="https://img.freepik.com/free-photo/front-view-burger-with-meat-cheese-lettuce_141793-3754.jpg" alt="">
+            <h3>Classic Burger</h3>
+            <p>Fresh buns, crispy patty, delicious sauces.</p>
+            <div class="price">₹199</div>
         </div>
-    </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p style="text-align:center;">
-            📧 Email: <strong>akshadadoke123@gmail.com</strong><br><br>
-            🔗 GitHub: <a href="https://github.com/Akshada-Doke" target="_blank" style="color:#00eaff;">github.com/Akshada-Doke</a><br><br>
-            🔗 LinkedIn: <a href="https://www.linkedin.com/in/akshada-doke-93616034b/" target="_blank" style="color:#00eaff;">linkedin.com/in/akshada-doke</a>
-        </p>
-    </section>
+        <div class="menu-item">
+            <img src="https://img.freepik.com/free-photo/side-view-shawarma-with-fried-potatoes-board_141793-4894.jpg" alt="">
+            <h3>Chicken Shawarma</h3>
+            <p>Authentic Middle Eastern style.</p>
+            <div class="price">₹249</div>
+        </div>
 
-    <footer>© 2025 Akshada Doke — All Rights Reserved</footer>
+        <div class="menu-item">
+            <img src="https://img.freepik.com/free-photo/chocolate-ice-cream-dessert_144627-8974.jpg" alt="">
+            <h3>Chocolate Dessert</h3>
+            <p>A sweet treat for your cravings.</p>
+            <div class="price">₹150</div>
+        </div>
+
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p style="text-align:center; max-width:600px; margin:auto; font-size:18px;">
+        TasteBite is a modern food hub offering premium quality dishes made with 
+        authentic ingredients. Fresh, flavorful, and served with love 💙✨
+    </p>
+</section>
+
+<section id="contact">
+    <h2>Contact & Location</h2>
+    <p style="text-align:center; font-size:18px;">
+        📍 Pune, Maharashtra, India <br><br>
+        📞 +91 9876543210 <br><br>
+        📧 order@tastebite.com
+    </p>
+</section>
+
+<footer>© 2025 TasteBite Restaurant — All Rights Reserved</footer>
 
 </body>
 </html>
-
 
